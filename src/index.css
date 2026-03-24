@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  /* Boutique Color Palette */
+  --color-brand-cream: #FAF9F6;
+  --color-brand-cream-dark: #F3EFE7;
+  --color-brand-sage: #8DA290;
+  --color-brand-clay: #B88B74;
+  --color-brand-charcoal: #333333;
+  
+  /* Luxury Typography */
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Inter", sans-serif;
+
+  /* Custom Transitions */
+  --animate-slow: fade-in 1s ease-out;
+}
+
+:root {
+  background-color: var(--color-brand-cream);
+  color: var(--color-brand-charcoal);
+  font-family: var(--font-sans);
+  
+  /* Enable smooth scrolling for anchor links */
+  scroll-behavior: smooth;
+  
+  /* Standardizing line height for a premium feel */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Text Selection */
+::selection {
+  background-color: var(--color-brand-sage);
+  color: white;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+  letter-spacing: -0.02em;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d1d1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-sage);
+}
+
+/* Utility for the "Grow Kindly" soft image feel */
+.img-soft-load {
+  filter: contrast(95%) brightness(102%);
+}
+
+/* GLOBAL BORDER UPDATES */
+@layer base {
+  /* Increased from /30 to /60 for a much darker, professional line */
+  border, .border-b, .border-t, .border-l, .border-r {
+    @apply border-brand-charcoal/60; 
+  }
+
+  hr {
+    @apply border-brand-charcoal/60;
+  }
+}
